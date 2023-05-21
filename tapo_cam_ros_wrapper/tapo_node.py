@@ -64,17 +64,17 @@ def main(args=None):
     ip_address_bedroom = "192.168.1.38"
     username_bedroom = 'Bedroom'
     link_bedroom = "rtsp://" + username_bedroom + ":" + password + "@" + ip_address_bedroom + "/stream2"
-    node_bedroom = PublishImages('bedroom_cam', link_bedroom, '/camera_living_room/color/image_raw')
+    node_bedroom = PublishImages('bedroom_cam', link_bedroom, '/camera_bedroom_room/color/image_raw')
 
     ip_address_dining = "192.168.1.34"
     username_dining = 'Dining'
     link_dining = "rtsp://" + username_dining + ":" + password + "@" + ip_address_dining + "/stream2"
-    node_dining_room = PublishImages('dining_room_cam', link_dining, '/camera_living_room/color/image_raw')
+    node_dining_room = PublishImages('dining_room_cam', link_dining, '/camera_dining_room/color/image_raw')
 
     ip_address_kitchen = "192.168.1.37"
     username_kitchen = 'Kitchen'
     link_kitchen = "rtsp://" + username_kitchen + ":" + password + "@" + ip_address_kitchen + "/stream2"
-    node_kitchen = PublishImages('kitchen_cam', link_kitchen, '/camera_living_room/color/image_raw')
+    node_kitchen = PublishImages('kitchen_cam', link_kitchen, '/camera_kitchen/color/image_raw')
 
     executor = SingleThreadedExecutor()
 
