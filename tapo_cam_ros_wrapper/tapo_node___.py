@@ -22,7 +22,8 @@ ros2 run yolostate detecthuman --ros-args -p camera:=/smart_home/camera/color/im
 class PublishImages(Node):
     def __init__(self, node_name):
         super().__init__(node_name)
-        print('init')
+
+        # self.node = rclpy.create_node(node_name)
         self.declare_parameter("username", "default_value")
         # Access the parameter value
         username = self.get_parameter("username").get_parameter_value().string_value
@@ -34,7 +35,7 @@ class PublishImages(Node):
         self.declare_parameter("pub_topic_name", "default_value")
         # Access the parameter value
         pub_topic_name = self.get_parameter("pub_topic_name").get_parameter_value().string_value
-        print("gGGGGGGGGGGGGG", username , ip_address, pub_topic_name )
+
         password = os.environ['TAPO_CAMERA_PASS']
         self.link = "rtsp://" + username + ":" + password + "@" + ip_address + "/stream2"
 
@@ -61,18 +62,29 @@ class PublishImages(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = PublishImages("my_node")
+    node = MyNode("my_node")
 
     # ip_address_living = "192.168.1.35"
     # username_living = 'Living_room'
     # link_living = "rtsp://" + username_living + ":" + password + "@" + ip_address_living + "/stream2"
     # node_living_room = PublishImages('living_room_cam', link_living, '/camera_living_room/color/image_raw')
     #
+    # ip_address_bedroom = "192.168.1.38"
+    # username_bedroom = 'Bedroom'
+    # link_bedroom = "rtsp://" + username_bedroom + ":" + password + "@" + ip_address_bedroom + "/stream2"
+    # node_bedroom = PublishImages('bedroom_cam', link_bedroom, '/camera_bedroom_room/color/image_raw')
+    #
+    # ip_address_dining = "192.168.1.34"
+    # username_dining = 'Dining'
+    # link_dining = "rtsp://" + username_dining + ":" + password + "@" + ip_address_dining + "/stream2"
+    # node_dining_room = PublishImages('dining_room_cam', link_dining, '/camera_dining_room/color/image_raw')
+    #
+    # ip_address_kitchen = "192.168.1.37"
+    # username_kitchen = 'Kitchen'
+    # link_kitchen = "rtsp://" + username_kitchen + ":" + password + "@" + ip_address_kitchen + "/stream2"
+    # node_kitchen = PublishImages('kitchen_cam', link_kitchen, '/camera_kitchen/color/image_raw')
 
-
-    print('before_ok')
     while rclpy.ok():
-        print('after_ok')
         # node_kitchen.camera_callback()
         # node_dining_room.camera_callback()
         # node_living_room.camera_callback()
