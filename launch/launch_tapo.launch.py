@@ -6,10 +6,10 @@ from launch.substitutions import LaunchConfiguration
 def generate_launch_description():
     ld = LaunchDescription()
 
-    # Kitchen Camera
+    # Kitchen Camera C200_9D046F
     ip_address_kit = DeclareLaunchArgument(
         "kit_ip_address",
-        default_value="192.168.1.37",
+        default_value="192.168.1.38",
         description="IP address for the kitchen camera"
     )
     username_kit = DeclareLaunchArgument(
@@ -37,13 +37,13 @@ def generate_launch_description():
             {"pub_topic_name": LaunchConfiguration("kit_pub_topic_name")}
         ]
     )
-
+    #
     ld.add_action(tapo_node_kitchen)
-
-    # Living Room Camera
+    #
+    # Living Room Camera C200_9D00E4
     ip_address_liv = DeclareLaunchArgument(
         "liv_ip_address",
-        default_value="192.168.1.48",
+        default_value="192.168.1.39",
         description="IP address for the living room camera"
     )
     username_liv = DeclareLaunchArgument(
@@ -74,10 +74,10 @@ def generate_launch_description():
 
     ld.add_action(tapo_node_living_room)
 
-    # Dining Room Camera
+    # Dining Room Camera C200_9CF817
     ip_address_din = DeclareLaunchArgument(
         "din_ip_address",
-        default_value="192.168.1.34",
+        default_value="192.168.1.37",
         description="IP address for the dining room camera"
     )
     username_din = DeclareLaunchArgument(
@@ -108,10 +108,10 @@ def generate_launch_description():
 
     ld.add_action(tapo_node_dining_room)
 
-    # Bedroom Camera
+    # Bedroom Camera C200_9CFE4C
     ip_address_bed = DeclareLaunchArgument(
         "bed_ip_address",
-        default_value="192.168.1.38",
+        default_value="192.168.1.41",
         description="IP address for the bedroom camera"
     )
     username_bed = DeclareLaunchArgument(

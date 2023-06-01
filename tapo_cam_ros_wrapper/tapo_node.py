@@ -63,37 +63,15 @@ def main(args=None):
     rclpy.init(args=args)
     node = PublishImages("my_node")
 
-    # ip_address_living = "192.168.1.35"
-    # username_living = 'Living_room'
-    # link_living = "rtsp://" + username_living + ":" + password + "@" + ip_address_living + "/stream2"
-    # node_living_room = PublishImages('living_room_cam', link_living, '/camera_living_room/color/image_raw')
-    #
-
-
     print('before_ok')
     while rclpy.ok():
         print('after_ok')
-        # node_kitchen.camera_callback()
-        # node_dining_room.camera_callback()
-        # node_living_room.camera_callback()
         node.camera_callback()
-        # time.sleep(2)
 
-    # executor = SingleThreadedExecutor()
-    #
-    # executor.add_node(node_living_room)
-    # executor.add_node(node_kitchen)
-    # executor.add_node(node_dining_room)
-    # executor.add_node(node_bedroom)
-    #
-    # executor.spin()
-    # rclpy.spin(node_dining_room)
     rclpy.shutdown()
 
     node.cap.release()
-    # node_dining_room.cap.release()
-    # node_bedroom.cap.release()
-    # node_living_room.cap.release()
+
 
 
 if __name__ == '__main__':
