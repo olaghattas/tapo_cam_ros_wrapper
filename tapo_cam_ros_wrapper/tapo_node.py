@@ -44,6 +44,7 @@ class PublishImages(Node):
         self.rgb8pub = self.create_publisher(Image, pub_topic_name, 10)
 
         self.cap = cv2.VideoCapture(self.link, cv2.CAP_FFMPEG)
+        self.img = None
 
     def camera_callback(self):
         # cap = cv2.VideoCapture(0)
@@ -53,9 +54,16 @@ class PublishImages(Node):
 
         if self.cap.isOpened():
             ret, frame = self.cap.read()
-            if ret:
-                # Convert ROS Image message to OpenCV image BGR8
-                self.rgb8pub.publish(self.bridge.cv2_to_imgmsg(frame, "bgr8"))
+            try:
+                if ret:
+                    # Convert ROS Image message to OpenCV image BGR8
+                    self.img = self.bridge.cv2_to_imgmsg(frame, "bgr8")
+                    self.rgb8pub.publish(self.img)
+            except Exception as e:
+                # Handle the exception
+                print(f"An error occurred: {e}")
+                if self.img is not None:
+                    self.rgb8pub.publish(self.img)
 
 
 
