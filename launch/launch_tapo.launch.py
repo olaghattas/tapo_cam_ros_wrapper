@@ -77,7 +77,7 @@ def generate_launch_description():
     # Dining Room Camera C200_9CF817
     ip_address_din = DeclareLaunchArgument(
         "din_ip_address",
-        default_value="192.168.1.37",
+        default_value="192.168.1.41",
         description="IP address for the dining room camera"
     )
     username_din = DeclareLaunchArgument(
@@ -111,7 +111,7 @@ def generate_launch_description():
     # Bedroom Camera C200_9CFE4C
     ip_address_bed = DeclareLaunchArgument(
         "bed_ip_address",
-        default_value="192.168.1.41",
+        default_value="192.168.1.50",
         description="IP address for the bedroom camera"
     )
     username_bed = DeclareLaunchArgument(
