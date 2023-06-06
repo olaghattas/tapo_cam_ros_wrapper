@@ -9,7 +9,7 @@ def generate_launch_description():
     # Kitchen Camera C200_9D046F
     ip_address_kit = DeclareLaunchArgument(
         "kit_ip_address",
-        default_value="192.168.1.38",
+        default_value="192.168.0.237",
         description="IP address for the kitchen camera"
     )
     username_kit = DeclareLaunchArgument(
@@ -39,11 +39,11 @@ def generate_launch_description():
     )
     #
     ld.add_action(tapo_node_kitchen)
-    #
+    #E4C
     # Living Room Camera C200_9D00E4
     ip_address_liv = DeclareLaunchArgument(
         "liv_ip_address",
-        default_value="192.168.1.39",
+        default_value="192.168.0.196",
         description="IP address for the living room camera"
     )
     username_liv = DeclareLaunchArgument(
@@ -74,10 +74,10 @@ def generate_launch_description():
 
     ld.add_action(tapo_node_living_room)
 
-    # Dining Room Camera C200_9CF817
+    # Dining Room Camera C200_9CF817   0E4
     ip_address_din = DeclareLaunchArgument(
         "din_ip_address",
-        default_value="192.168.1.41",
+        default_value="192.168.0.157",
         description="IP address for the dining room camera"
     )
     username_din = DeclareLaunchArgument(
@@ -108,10 +108,10 @@ def generate_launch_description():
 
     ld.add_action(tapo_node_dining_room)
 
-    # Bedroom Camera C200_9CFE4C
+    # Bedroom Camera C200_9CFE4C   F817
     ip_address_bed = DeclareLaunchArgument(
         "bed_ip_address",
-        default_value="192.168.1.49",
+        default_value="192.168.0.149",
         description="IP address for the bedroom camera"
     )
     username_bed = DeclareLaunchArgument(
