@@ -112,6 +112,7 @@ def generate_launch_description():
     ip_address_bed = DeclareLaunchArgument(
         "bed_ip_address",
         default_value="192.168.0.149",
+
         description="IP address for the bedroom camera"
     )
     username_bed = DeclareLaunchArgument(

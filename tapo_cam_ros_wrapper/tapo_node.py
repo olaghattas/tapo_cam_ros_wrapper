@@ -57,8 +57,9 @@ class PublishImages(Node):
             try:
                 if ret:
                     # Convert ROS Image message to OpenCV image BGR8
-                    self.img = self.bridge.cv2_to_imgmsg(frame, "bgr8")
-                    self.rgb8pub.publish(self.img)
+                    img = self.bridge.cv2_to_imgmsg(frame, "bgr8")
+                    self.rgb8pub.publish(img)
+                    self.img = img
             except Exception as e:
                 # Handle the exception
                 print(f"An error occurred: {e}")
