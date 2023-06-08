@@ -122,7 +122,7 @@ def generate_launch_description():
     )
     pub_topic_name_bed = DeclareLaunchArgument(
         "bed_pub_topic_name",
-        default_value="/camera_bedroom_room/color/image_raw",
+        default_value="/camera_bedroom/color/image_raw",
         description="Publish topic name for the bedroom camera"
     )
 
